@@ -56,8 +56,7 @@ the next level, and if you feel the same, you are welcome to join. See
 Installation
 ------------
 
-Install Liquid Feedback
-^^^^^^^^^^^^^^^^^^^^^^^
+### Install Liquid Feedback
 
 You need a working Liquid Feedback installation to use Solon. Not only that,
 but you need a patched version of Liquid Feedback Core. Let's start with that:
@@ -95,8 +94,7 @@ administrator, there's a very small "Admin" link at the bottom of the page. You
 can use that to create new users and organizations and policies that are used
 for issue management.
 
-Install Solon itself
-^^^^^^^^^^^^^^^^^^^^
+### Install Solon itself
 
 7) `git clone https://github.com/henrikingo/solon-voting.git`
 
