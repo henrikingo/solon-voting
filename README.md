@@ -158,24 +158,24 @@ If you do enjoy university level math, brace yourself, because the good stuff
 is about to begin:
 
 Solon will implement the Acquisti e-voting scheme. It is described in the
-paper [Acquisti].
+[paper by Acquisti].
 
-[acquisti]: http://www.heinz.cmu.edu/~acquisti/papers/acquisti-electronic_voting.pdf "Receipt-free Homomorphic Elections and Write-in Ballots, Alessandro Acquisti. Technical Report 2004/105, International Association for Cryptologic Research, May 2, 2004."
+[paper by Acquisti]: http://www.heinz.cmu.edu/~acquisti/papers/acquisti-electronic_voting.pdf "Receipt-free Homomorphic Elections and Write-in Ballots, Alessandro Acquisti. Technical Report 2004/105, International Association for Cryptologic Research, May 2, 2004."
 
 As it happens, it has been implemented in software once already. The process is
-described in [Goulet]:
+described in [Goulet et.al.]:
 
-[Goulet] http://www.seas.upenn.edu/~cse400/CSE400_2004_2005/34writeup.pdf "Surveying and Improving Electronic Voting Schemes, Jonathan D. Goulet, Jeffrey S. Zitelli, Sampath Kannan, 2005."
+[Goulet et.al.]: http://www.seas.upenn.edu/~cse400/CSE400_2004_2005/34writeup.pdf "Surveying and Improving Electronic Voting Schemes, Jonathan D. Goulet, Jeffrey S. Zitelli, Sampath Kannan, 2005."
 
 This paper is a good overview of the field of cryptographic e-voting protocols
 and the requirements such a protocol should meet. It concludes that the Acquisti
 protocol is the most complete solution (at the time of its writing, of course).
 Even if you don't want to read about the math involved, I recommend you read at 
 least the beginning of this paper. The introduction in this paper is useful to 
-everyone who want to get an overview of e-voting protocols.
-[Sampigethaya]
+everyone who want to get an overview of e-voting protocols:
+[Sampigethaya et.al.]
 
-[Sampigethaya]: http://www.ee.washington.edu/research/nsl/papers/JCS-05.pdf "A framework and taxonomy for comparison of electronic voting schemes, K Sampigethaya, R Poovendran, Computers & Security, Elsevier 2006."
+[Sampigethaya et.al.]: http://www.ee.washington.edu/research/nsl/papers/JCS-05.pdf "A framework and taxonomy for comparison of electronic voting schemes, K Sampigethaya, R Poovendran, Computers & Security, Elsevier 2006."
 
 The following papers reference the Acquisti paper and provide some critique. I
 have not yet read them in detail myself: [Meng], [Meng2]
