@@ -83,10 +83,12 @@ directory you have just patched with the Solon enabling patch.
 
 6) Finally, you need to configure Liquid Feedback to run in the 
 ext_voting_service mode so that Solon can hook into your voting procedure:
+
     su - www-data
     psql -c "INSERT INTO system_setting (member_ttl, ext_voting_service) VALUES ('1 year', TRUE);" liquid_feedback
     psql -c "UPDATE system_setting SET ext_voting_service=TRUE;" liquid_feedback
     exit
+
 (Note that if the second command above fails, that's ok.)
 
 You can now browse Liquid Feedback via a web browser. When you login as 
@@ -104,6 +106,7 @@ for issue management.
 The current Solon is just a mockup without cryptography, so we call the module
 "dummy" and hence we tend to use the database name "solon_dummy".) Here we use
 the same user "www-data" as was used in the instructions for Liquid Feedback:
+
     su - www-data
     createdb solon_dummy
     createlang plpgsql solon_dummy
