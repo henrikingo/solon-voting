@@ -98,11 +98,13 @@ for issue management.
 
 ### Install Solon itself
 
-7) `git clone https://github.com/henrikingo/solon-voting.git`
+7) Install a few Python modules that we need: `apt-get install python-tornado python-psycopg2`
 
-8) `cd solon-voting`
+8) `git clone https://github.com/henrikingo/solon-voting.git`
 
-9) You need to create another PostgreSQL database to be used by Solon. (Note:
+9) `cd solon-voting`
+
+10) You need to create another PostgreSQL database to be used by Solon. (Note:
 The current Solon is just a mockup without cryptography, so we call the module
 "dummy" and hence we tend to use the database name "solon_dummy".) Here we use
 the same user "www-data" as was used in the instructions for Liquid Feedback:
@@ -113,11 +115,11 @@ the same user "www-data" as was used in the instructions for Liquid Feedback:
     psql -v ON_ERROR_STOP=1 -f sql/dummy.sql solon_dummy
     exit
 
-10) Optionally, edit the configuration file `config.py`. (If you didn't change
+11) Optionally, edit the configuration file `config.py`. (If you didn't change
 anything in the above instructions, such as usernames or passwords, then you're
 good to go and don't need to change anything in the config.)
 
-11) Start the webserver: `su www-data -c 'python solon_server.py'`
+12) Start the webserver: `su www-data -c 'python solon_server.py'`
 
 Now you can open a web browser and go to localhost:8888. Hit the "execute cron 
 tasks" link to see if you can fetch your first issues from Liquid Feedback to
@@ -147,6 +149,10 @@ henrik.ingo@avoinelama.fi.
 You may also follow, and @mention or DM, [@SolonVoting] on Twitter.
 
 [@SolonVoting]: https://twitter.com/solonvoting
+
+Solon architecture and design decisions have been described on my blog at:
+http://openlife.cc/category/topic/solon 
+
 
 Reading list
 ------------
