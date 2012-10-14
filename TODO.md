@@ -42,7 +42,8 @@ become a long-time contributor, feel free to pick one of these as your own.
 High-level architecture
 -----------------------
 
-TODO: I will draw some SVG soon.
+For a high-level architecture, see:
+http://openlife.cc/blogs/2012/october/how-hook-solon-secure-voting-liquid-feedback
 
 The Acquisti algorithm relies on a group of servers, each operated by an 
 independent Voting Authority, to communicate together. Threshold cryptography.
