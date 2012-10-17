@@ -143,8 +143,8 @@ especially welcome.
 
 [TODO.md]: https://raw.github.com/henrikingo/solon-voting/master/TODO.md
 
-Right now, there is no mailing list yet. You can email me at 
-henrik.ingo@avoinelama.fi.
+The official project mailing-list is at solon-voting@googlegroups.com.
+https://groups.google.com/forum/#!forum/solon-voting
 
 You may also follow, and @mention or DM, [@SolonVoting] on Twitter.
 
