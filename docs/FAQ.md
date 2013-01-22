@@ -38,18 +38,22 @@ You can read more about delegated democracy at these links:
 Q: Can Solon be used for just normal, traditional elections?
 ------------------------------------------------------------
 
-A: Yes. With Solon we are primarily motivated by the rise of various delegated 
-democracy platforms. But it is worth pointing out Solon could also be used to 
-provide a cryptographically secure voting algorithm for traditional elections 
-that wish to use e-voting instead of paper ballots. (Sadly, the current vendors 
-of such systems seem to be completely ignorant of existing academic research in 
-this area, in fact we are not aware of any system currently existing that 
-would be even close to secure or fit for purpose.) 
+A: With Solon we are primarily motivated by the rise of various delegated 
+democracy platforms. As far as we know, nobody is even thinking about, let 
+alone implementing secure e-voting that would meet the needs of a delegated 
+democracy platform.
 
-As a bonus, we will implement Solon in a way that it will also be possible to 
-use more modern voting methods, such as various variants of preferential voting.
-This requirement comes from the fact that Liquid Feedback uses one such 
-method: Schulze ranking.
+We are aware of one simple and promising e-voting solution that was designed
+for use in traditional elections: [Helios Voting]. If you are interested in
+secure e-voting for traditional elections, you should probably look into it.
+
+[helios voting]: http://heliosvoting.org/
+
+The current plan is to use Helios as a backend for Solon, with Solon providing
+features needed by delegated democracy use case. For example, we will implement 
+Solon in a way that it will also be possible to use more modern voting methods, 
+such as various variants of preferential voting. This requirement comes from the 
+fact that Liquid Feedback uses one such method: Schulze ranking.
 
 Q: I'm against e-voting / e-voting doesn't work / etc...?
 ---------------------------------------------------------
@@ -64,19 +68,24 @@ this purpose but offer some terribly naive, unfit-for-purpose solutions.
 The other problem is simply that paper ballot elections work well, and trying to
 replace them with a complex and expensive computer system is just not very smart
 (even in the case that such a system would actually implement some secure voting
-protocol, which to date has not even happened.)
+protocol, which to date has not even happened. Note that while Helios Voting 
+does implement proper, albeit simple, crypto, it hasn't actually been used for 
+government elections.)
 
-Solon was not created to be used in traditional elections. (But it could be used
-also for such e-voting systems if you are in that business.) The motivation
+[helios voting]: http://heliosvoting.org/
+
+Solon was not created to be used in traditional elections. The motivation
 behind Solon is to enable secure voting for the burgeoning delegated democracy
 movement. Here the arguments for and against e-voting have a slightly different
-balance.
+balance:
 
 Delegated democracy is only practical using computers and the internet - an
 active participant might want to vote and propose amendments every day. If you 
 believe that delegated democracy is preferable over traditional representative 
-democracy, then you are already using computers and hence e-voting. In that
-case the only question is, how can we make it as secure and trusted as possible.
+democracy, then you are already using computers and hence e-voting. In the real
+world this is already happening in Central Europe, where the Liquid Feedback 
+platform is used. In that case the only question is, how can we make it as 
+secure and trusted as possible, since people are already doing it anyway.
 
 
 Q: Can I use Solon in production?

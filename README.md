@@ -1,23 +1,20 @@
 Solon Voting
 ============
-A cryptographically secure voting system.
+A cryptographically secure voting system for direct democracy platforms.
 
 Introduction
 ------------
 
 Solon is a system that provides cryptographically secure electronic voting 
-(e-voting). In particular, it implements the so called [Acquisti] algorithm. See
-"Reading list" below for a list of academic articles on cryptographically 
-secure voting.
-
-[acquisti]: http://www.heinz.cmu.edu/~acquisti/papers/acquisti-electronic_voting.pdf 
+(e-voting), particularly focusing on direct democracy platforms instead of
+replicating the functionality of a classic representative democracy election.
 
 Solon is designed to be used together with burgeoning direct democracy and 
 delegated democracy systems. These typically have requirements that go beyond
-your average government elections. In particular, the voting algorithm needs
-to support the possibility to flexibly delegate (and un-delegate) your vote,
-and it must be possible to use more advanced vote counting, such as Schulze
-method and other preferential voting methods.
+your average parliamentary elections. In particular, the voting algorithm needs
+to support the possibility to flexibly delegate (and un-delegate) your vote at
+any time, and it must be possible to use more advanced vote counting, such as 
+Schulze method and other preferential voting methods.
 
 Currently, we focus on providing a cryptographically secure voting facility
 that connects with [Liquid Feedback]. However, the code is modular in this
@@ -26,13 +23,16 @@ See "Direct democracy platforms" for other systems we like to keep an eye on.
 
 [liquid feedback]: http://liquidfeedback.org/
 
-When ready, Solon could also be used to implement e-voting for traditional
-elections or referendums. As far as we know, none of the e-voting systems
-being sold for such purposes implement a cryptographically secure voting
-algorithm (despite what their marketing might claim), so even if this is not
-the primary motivation behind Solon, it would be an improvement over the 
-systems currently used.
+After starting Solon we have become aware of an open source implementation of 
+a so-called homomorphic e-voting algorithm: [Helios Voting]. The current focus
+is on using Helios as the secure voting backend for Solon. Essentially this
+means Solon acts as integration and orchestration layer between Liquid Feedback
+and Helios. New issues to vote on are discovered in the Liquid Feedback 
+workflow, the data is then copied into Solon and a Helios ballot is created.
+Users will then vote securely using Helios, after which Solon will copy the
+results back into Liquid Feedback.
 
+[helios voting]: http://heliosvoting.org/
 
 Status
 ------
@@ -42,8 +42,8 @@ Solon is currently in active development, and it is not ready to be used yet.
 The current code is merely a mockup that is able to connect with a Liquid 
 Feedback system, extract issues to vote on and return results back. It is just
 a mockup that demonstrates the data flows. The actual code for any cryptographic
-functionality is completely missing - implementing this is where our focus is 
-next.
+functionality is completely missing. Integrating with the Helios project is the
+next step and proof of concept work for this is now in progress.
 
 If you want to contribute to development, join us on [Github]! The Solon
 developers think it's an exciting prospect to take representative democracy to
@@ -133,8 +133,10 @@ If you are exited about the prospect of taking representative democracy to the
 next level, then you might be interested in joining us. Check out the code at
 https://github.com/henrikingo/solon-voting 
 
-Solon might be especially interesting if you are into cryptography or math, as 
-we need to implement a few novel cryptographic functions along the way. But the 
+Solon might be especially interesting if you are into cryptography or math. Even
+if we can use a lot of the functionality directly from Helios (thanks to the 
+wonders of open source!) in the long term we will have to extend it to make it
+more robust for large scale, "important", voting. But the 
 project isn't exclusive to math geeks! There are a number of skills from Python,
 HTTP, JSON and automated testing where your help is welcome.
 
@@ -157,44 +159,54 @@ http://openlife.cc/category/topic/solon
 Reading list
 ------------
 
+If you are interested in the concept of delegated democracy, here are a few 
+links:
+
+ * http://en.wikipedia.org/wiki/Delegative_democracy
+ * http://liquidfeedback.org/mission/
+ * http://openlife.cc/DirectDemocracy
+
+As for crypto and e-voting algorithms, it makes sense to start by reading the 
+[Helios Voting paper].
+
+[helios voting paper]: http://www.usenix.org/events/sec08/tech/full_papers/adida/adida.pdf
+
 Note: Unless you enjoy reading papers stuffed with university level math, some
 of these links may not be for you. It is still possible to contribute to Solon
 even if you don't want to torture your brain cells with the actual cryptography.
 If you do enjoy university level math, brace yourself, because the good stuff
-is about to begin:
+has just begun!
 
-Solon will implement the Acquisti e-voting scheme. It is described in the
-[paper by Acquisti].
-
-[paper by Acquisti]: http://www.heinz.cmu.edu/~acquisti/papers/acquisti-electronic_voting.pdf "Receipt-free Homomorphic Elections and Write-in Ballots, Alessandro Acquisti. Technical Report 2004/105, International Association for Cryptologic Research, May 2, 2004."
-
-As it happens, it has been implemented in software once already. The process is
-described in [Goulet et.al.]:
-
-[Goulet et.al.]: http://www.seas.upenn.edu/~cse400/CSE400_2004_2005/34writeup.pdf "Surveying and Improving Electronic Voting Schemes, Jonathan D. Goulet, Jeffrey S. Zitelli, Sampath Kannan, 2005."
-
-This paper is a good overview of the field of cryptographic e-voting protocols
-and the requirements such a protocol should meet. It concludes that the Acquisti
-protocol is the most complete solution (at the time of its writing, of course).
-Even if you don't want to read about the math involved, I recommend you read at 
-least the beginning of this paper. The introduction in this paper is useful to 
-everyone who want to get an overview of e-voting protocols:
+The next paper is a good overview of the field of cryptographic e-voting 
+protocols and the requirements such a protocol should meet. Even if you don't 
+want to read about the math involved, I recommend you read at least the 
+beginning of this paper. The introduction in this paper is useful to everyone 
+who want to get an overview of e-voting protocols:
 [Sampigethaya et.al.]
 
 [Sampigethaya et.al.]: http://www.ee.washington.edu/research/nsl/papers/JCS-05.pdf "A framework and taxonomy for comparison of electronic voting schemes, K Sampigethaya, R Poovendran, Computers & Security, Elsevier 2006."
+
+
+The Sampigethaya paper concludes that one [Acquisti protocol] is the most 
+complete solution (at the time of its writing, of course). Before finding the 
+Helios project we were planning to implement Acquisti in Solon. You may still be 
+interested to read about it as it is a concise and well written paper. (But
+now this is only for math geeks :-)
+
+[Acquisti]: http://www.heinz.cmu.edu/~acquisti/papers/acquisti-electronic_voting.pdf "Receipt-free Homomorphic Elections and Write-in Ballots, Alessandro Acquisti. Technical Report 2004/105, International Association for Cryptologic Research, May 2, 2004."
+
+The following papers are commentaries on Acquisti: 
+
+[Goulet et.al.] implemented Aquisti in software, graduated, didn't keep any 
+copies and didn't publish it as open source:
+
+[Goulet et.al.]: http://www.seas.upenn.edu/~cse400/CSE400_2004_2005/34writeup.pdf "Surveying and Improving Electronic Voting Schemes, Jonathan D. Goulet, Jeffrey S. Zitelli, Sampath Kannan, 2005."
 
 The following papers reference the Acquisti paper and provide some critique. I
 have not yet read them in detail myself: [Meng], [Meng2]
 
 [Meng]: http://people.scs.carleton.ca/~clark/biblio/coercion/Meng%202010.pdf "A Receipt-free Coercion-resistant Remote Internet Voting Protocol without Physical Assumptions through Deniable Encryption and Trapdoor Commitment Scheme, Bo Meng, Zimao Li and Jun Qin. JOURNAL OF SOFTWARE, VOL. 5, NO. 9, SEPTEMBER 2010."
 [Meng2]: http://www.academypublisher.com/proc/iscsct10/papers/iscsct10p148.pdf "Automatic Verification of Acquisti Voting Protocol in Formal Model, Bo Meng, Wei Huang, and Dejun Wang. Proceedings of the Third International Symposium on Computer Science and Computational Technology(ISCSCT ’10) Jiaozuo, P. R. China, 14-15,August 2010, pp. 148-150."
-
-Btw, if you are interested in the concept of delegated democracy, here are a few
-links:
-
- * http://en.wikipedia.org/wiki/Delegative_democracy
- * http://liquidfeedback.org/mission/
- * http://openlife.cc/DirectDemocracy
 
 
 Direct democracy platforms
