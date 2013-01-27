@@ -114,3 +114,11 @@ As an exception, the patches against Liquid Feedback which are kept under
 `liquid_feedback_patch/` are licensed with the same license as Liquid Feedback 
 itself, the MIT license.
 
+Q: I'm trying to install Helios Voting but can't get it to work...
+-------------------------------------------------------------------
+
+A: The install instructions at http://documentation.heliosvoting.org/install 
+are a bit outdated. See the file [docs/helios-install-howto.md] for what you
+really need to do.
+
+[docs/helios-install-howto.md]: https://raw.github.com/henrikingo/solon-voting/master/docs/helios-install-howto.md
