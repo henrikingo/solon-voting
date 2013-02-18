@@ -59,7 +59,20 @@ Installation
 ### Install Liquid Feedback
 
 You need a working Liquid Feedback installation to use Solon. Not only that,
-but you need a patched version of Liquid Feedback Core. Let's start with that:
+but you need a patched version of Liquid Feedback Core. Let's start with that.
+
+We have tested the following versions of Liquid Feedback components:
+
+LiquidFeedback Frontend  2.0.1
+LiquidFeedback Core      2.0.11
+WebMCP                   1.2.3
+Lua                      5.1
+PostgreSQL               8.4.12
+
+Note that the Solon patch for Liquid Feedback is specifically against v2.0.11
+of LiquidFeedback Core, and the Frontend version must match the version of Core
+that you use. So for now those two must be exactly 2.0.11 and 2.0.1 
+respectively.
 
 0) Tip: Liquid Feedback supports Debian Squeeze. If you are on any other platform,
 it's probably worth taking that seriously: try using Vagrant or VirtualBox to 
@@ -80,6 +93,8 @@ against which we provide a patch, newer versions will probably not work.
 http://dev.liquidfeedback.org/trac/lf/wiki/installation to install the full
 Liquid Feedback system. When it is time to install the Core module, use the
 directory you have just patched with the Solon enabling patch.
+
+Note that for the Liquid Feedback Frontend, version 2.0.1 has been tested!
 
 6) Finally, you need to configure Liquid Feedback to run in the 
 ext_voting_service mode so that Solon can hook into your voting procedure:
