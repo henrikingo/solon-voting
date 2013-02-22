@@ -113,6 +113,13 @@ for issue management.
 
 ### Install Solon itself
 
+Currently Solon is tested on
+
+Python 2.7
+Tornado 2.1
+
+Tornado 1.x is known not to work.
+
 7) Install a few Python modules that we need: `apt-get install python-tornado python-psycopg2`
 
 8) `git clone https://github.com/henrikingo/solon-voting.git`
