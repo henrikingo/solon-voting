@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# Usage
+# ./create_referendum.py referendum_short_name
+# Note that referendum_short_name must be unique, e.g. use "autoreferendum1", "autoreferendum2", ... for tests.
+
 # This is an example python script how to:
 # - login to Helios, using dummy authentication for now
 # - create a referendum
