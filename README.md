@@ -85,12 +85,12 @@ against which we provide a patch, newer versions will probably not work.
 2) Untar: `tar xvf liquid_feedback_core-v2.0.11.tar.gz` and 
 `cd cd liquid_feedback_core-v2.0.11/`
 
-3) Get the patch: `wget https://raw.github.com/henrikingo/solon-voting/liquid_feedback_patch/liquid_feedback_core-v2.0.11.solon-v0.1.diff`
+3) Get the patch: `wget https://raw.github.com/henrikingo/solon-voting/master/liquid_feedback_patch/liquid_feedback_core-v2.0.11.solon-v0.1.diff`
 
 4) `patch -p1 < liquid_feedback_core-v2.0.11.solon-v0.1.diff`
 
 5) You can now follow the instructions from 
-http://dev.liquidfeedback.org/trac/lf/wiki/installation to install the full
+http://dev.liquidfeedback.org/trac/lf/wiki/installation?version=26 to install the full
 Liquid Feedback system. When it is time to install the Core module, use the
 directory you have just patched with the Solon enabling patch.
 
