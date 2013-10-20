@@ -1,6 +1,16 @@
 Solon Voting
 ============
-A cryptographically secure voting system for direct democracy platforms.
+
+I've discovered Agora Voting, which is a liquid democracy platform, includes
+cyprotgraphically secure voting and is cleanly based on python / django.
+It's reason enough to announce that I'm discontinuing development on Solon
+and if I'll have time in the future, I will be seen hacking on Agora Voting
+instead. So please join me at:
+
+https://agoravoting.com/
+
+
+Original README contents follows:
 
 Introduction
 ------------
